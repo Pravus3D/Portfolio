@@ -164,7 +164,7 @@ footer {
 }
 
 .links .educacao::before {
-    background-image: url('portfolio/images/educacao.jpg'); /* Imagem educação */
+    background-image: url('images/educacao.jpg'); /* Imagem educação */
     background-color: rgba(239, 108, 0, 0.6); /* Laranja com transparência */
     mix-blend-mode: multiply;
 }
