@@ -1,0 +1,192 @@
+/* Reset e configurações básicas */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* Garantir altura total da página */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    display: flex;
+    flex-direction: column; /* Para garantir rodapé no final */
+}
+
+/* Fundo das páginas temáticas */
+.industriais-bg {
+    background: #f3e5f5; /* Roxo claro */
+}
+
+.educacao-bg {
+    background: #fff3e0; /* Laranja claro */
+}
+
+.moveis-bg {
+    background: #e8f5e9; /* Verde claro */
+}
+
+/* Links da página principal */
+.links a {
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.links .industriais {
+    background: #7b1fa2; /* Roxo escuro */
+}
+
+.links .educacao {
+    background: #ef6c00; /* Laranja escuro */
+}
+
+.links .moveis {
+    background: #2e7d32; /* Verde escuro */
+}
+
+.links a:hover {
+    opacity: 0.8;
+}
+
+/* Cabeçalhos com temas */
+header {
+    color: white;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header.principal-header {
+    background: #007bff; /* Azul para página principal */
+}
+
+header.industriais-header {
+    background: #7b1fa2; /* Roxo escuro */
+}
+
+header.educacao-header {
+    background: #ef6c00; /* Laranja escuro */
+}
+
+header.moveis-header {
+    background: #2e7d32; /* Verde escuro */
+}
+
+header h1 {
+    margin-bottom: 0.5rem;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container principal */
+.container {
+    flex: 1; /* Faz com que o conteúdo preencha o espaço disponível */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.section h2 {
+    margin-bottom: 1rem;
+    color: #007bff;
+}
+
+/* Rodapé fixado ao final */
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    margin-top: auto; /* Empurra o rodapé para o final */
+}
+
+/* Botões da página principal */
+.links a {
+    display: block;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden; /* Para limitar a imagem ao botão */
+    transition: all 0.3s ease-in-out; /* Animação suave */
+}
+
+/* Imagem de fundo para botões */
+.links a::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Invisível por padrão */
+    z-index: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Temas para as imagens */
+.links .industriais::before {
+    background-image: url('industrial.jpg'); /* Imagem industrial */
+    background-color: rgba(123, 31, 162, 0.6); /* Roxo com transparência */
+    mix-blend-mode: multiply; /* Matiza a imagem */
+}
+
+.links .educacao::before {
+    background-image: url('educacao.jpg'); /* Imagem educação */
+    background-color: rgba(239, 108, 0, 0.6); /* Laranja com transparência */
+    mix-blend-mode: multiply;
+}
+
+.links .moveis::before {
+    background-image: url('moveis.jpg'); /* Imagem móveis */
+    background-color: rgba(46, 125, 50, 0.6); /* Verde com transparência */
+    mix-blend-mode: multiply;
+}
+
+/* Efeito de hover nos botões */
+.links a:hover {
+    transform: scale(1.2); /* Expande o botão ainda mais */
+    font-size: 1.3rem; /* Aumenta um pouco mais o tamanho da fonte */
+}
+
+.links a:hover::before {
+    opacity: 1; /* Torna a imagem visível */
+}
+
+/* Para garantir que o texto fique visível por cima da imagem */
+.links a span {
+    position: relative;
+    z-index: 1; /* Coloca o texto acima da imagem */
+}
