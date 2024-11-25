@@ -198,3 +198,36 @@ p, a, li {
     font-family: 'Space Grotesk', sans-serif;
     font-weight: 400; /* Regular weight for body text */
 }
+/* Galeria de imagens */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.gallery figure {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.gallery figure:hover img {
+    transform: scale(1.05);
+    opacity: 0.9;
+}
+
+.gallery figcaption {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+}
