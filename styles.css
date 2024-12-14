@@ -1,4 +1,4 @@
-/* Reset e configurações básicas */
+/* Reset and Basic Setup */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 html, body {
-    height: 100%; /* Garantir altura total da página */
+    height: 100%; /* Ensure full-page height */
 }
 
 body {
@@ -14,74 +14,49 @@ body {
     line-height: 1.6;
     color: #333;
     display: flex;
-    flex-direction: column; /* Para garantir rodapé no final */
+    flex-direction: column; /* Footer at the bottom */
+    background-color: #f8f9fa; /* Neutral background for unused pages */
 }
 
-/* Fundo das páginas temáticas */
-.industriais-bg {
-    background: #f3e5f5; /* Roxo claro */
+/* Themed Backgrounds */
+body.industriais-bg {
+    background: #f3e5f5; /* Light Purple */
 }
 
-.educacao-bg {
-    background: #fff3e0; /* Laranja claro */
+body.educacao-bg {
+    background: #fff3e0; /* Light Orange */
 }
 
-.moveis-bg {
-    background: #e8f5e9; /* Verde claro */
+body.moveis-bg {
+    background: #e8f5e9; /* Light Green */
 }
 
-/* Links da página principal */
-.links a {
-    display: block;
-    padding: 1rem;
-    margin: 0.5rem 0;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-.links .industriais {
-    background: #7b1fa2; /* Roxo escuro */
-}
-
-.links .educacao {
-    background: #ef6c00; /* Laranja escuro */
-}
-
-.links .moveis {
-    background: #2e7d32; /* Verde escuro */
-}
-
-.links a:hover {
-    opacity: 0.8;
-}
-
-/* Cabeçalhos com temas */
+/* Header Styles */
 header {
     color: white;
     padding: 1rem 0;
     text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 header.principal-header {
-    background: #007bff; /* Azul para página principal */
+    background: #007bff; /* Blue for main page */
 }
 
 header.industriais-header {
-    background: #7b1fa2; /* Roxo escuro */
+    background: #7b1fa2; /* Dark Purple */
 }
 
 header.educacao-header {
-    background: #ef6c00; /* Laranja escuro */
+    background: #ef6c00; /* Dark Orange */
 }
 
 header.moveis-header {
-    background: #2e7d32; /* Verde escuro */
+    background: #2e7d32; /* Dark Green */
 }
 
 header h1 {
+    font-size: 2rem;
     margin-bottom: 0.5rem;
 }
 
@@ -89,59 +64,84 @@ nav ul {
     list-style: none;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 nav a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
 }
 
 nav a:hover {
     text-decoration: underline;
 }
 
-/* Container principal */
+/* Main Container */
 .container {
-    flex: 1; /* Faz com que o conteúdo preencha o espaço disponível */
+    flex: 1;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem;
+    padding: 2rem 1rem;
+    text-align: center;
 }
 
 .section h2 {
     margin-bottom: 1rem;
-    color: #007bff;
+    color: #007bff; /* Accent color */
 }
 
-/* Rodapé fixado ao final */
+.section p {
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+/* Footer */
 footer {
     background: #333;
     color: white;
     text-align: center;
-    padding: 1rem 0;
-    position: relative;
-    bottom: 0;
+    padding: 1rem;
     width: 100%;
-    margin-top: auto; /* Empurra o rodapé para o final */
+    margin-top: auto;
 }
 
-/* Botões da página principal */
+/* Button Styles */
 .links a {
     display: block;
-    padding: 1rem;
+    padding: 1rem 2rem;
     margin: 0.5rem 0;
     text-align: center;
     text-decoration: none;
     color: white;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 8px;
     position: relative;
-    overflow: hidden; /* Para limitar a imagem ao botão */
-    transition: all 0.3s ease-in-out; /* Animação suave */
+    overflow: hidden;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Imagem de fundo para botões */
+/* Button Colors */
+.links .industriais {
+    background: #7b1fa2; /* Purple */
+}
+
+.links .educacao {
+    background: #ef6c00; /* Orange */
+}
+
+.links .moveis {
+    background: #2e7d32; /* Green */
+}
+
+/* Hover Effects for Buttons */
+.links a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Background Images */
 .links a::before {
     content: "";
     position: absolute;
@@ -151,54 +151,37 @@ footer {
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0; /* Invisível por padrão */
+    opacity: 0;
     z-index: 0;
-    transition: opacity 0.3s ease-in-out;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    filter: brightness(0.7);
 }
 
-/* Temas para as imagens */
 .links .industriais::before {
-    background-image: url('images/industrial.jpg'); /* Imagem industrial */
-    background-color: rgba(123, 31, 162, 0.6); /* Roxo com transparência */
-    mix-blend-mode: multiply; /* Matiza a imagem */
+    background-image: url('images/industrial.jpg');
 }
 
 .links .educacao::before {
-    background-image: url('images/educacao.jpg'); /* Imagem educação */
-    background-color: rgba(239, 108, 0, 0.6); /* Laranja com transparência */
-    mix-blend-mode: multiply;
+    background-image: url('images/educacao.jpg');
 }
 
 .links .moveis::before {
-    background-image: url('images/moveis.jpg'); /* Imagem móveis */
-    background-color: rgba(46, 125, 50, 0.6); /* Verde com transparência */
-    mix-blend-mode: multiply;
+    background-image: url('images/moveis.jpg');
 }
 
-/* Efeito de hover nos botões */
-.links a:hover {
-    transform: scale(1.2); /* Expande o botão ainda mais */
-    font-size: 1.3rem; /* Aumenta um pouco mais o tamanho da fonte */
-}
-
+/* Active Hover Effects */
 .links a:hover::before {
-    opacity: 1; /* Torna a imagem visível */
+    opacity: 1;
+    transform: scale(1.2);
 }
 
-/* Para garantir que o texto fique visível por cima da imagem */
+/* Ensure Button Text is Visible */
 .links a span {
     position: relative;
-    z-index: 1; /* Coloca o texto acima da imagem */
+    z-index: 1;
 }
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 700; /* Bold style for headings */
-}
-p, a, li {
-    font-family: 'Space Grotesk', sans-serif;
-    font-weight: 400; /* Regular weight for body text */
-}
-/* Galeria de imagens */
+
+/* Gallery */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -231,3 +214,7 @@ p, a, li {
     color: #555;
     margin-top: 0.5rem;
 }
+#industrial-text {
+    text-align: justify;
+    text-justify: inter-word;
+  }
